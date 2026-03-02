@@ -20,7 +20,7 @@ The firewall acts as the central gateway between virtual machines, enabling netw
 The pfSense firewall was configured as the network gateway for the home SOC lab.
 
 **Network Flow:**
-![unnamed](https://github.com/user-attachments/assets/b5455d5d-bf4b-4726-a4e0-5faf8723dcee)
+<img width="1024" height="656" alt="pfsense_firewall_lab_setup" src="https://github.com/user-attachments/assets/a03fc452-96cf-460f-9ff8-337d96e27918" />
 
 
 ## ⚙️ Configuration Performed
