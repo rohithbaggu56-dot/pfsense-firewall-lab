@@ -2,7 +2,6 @@
 
 ![pfSense](https://img.shields.io/badge/pfSense-212121?style=for-the-badge&logo=pfsense&logoColor=white)
 ![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white)
-![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white)
 ![MITRE ATT&CK](https://img.shields.io/badge/MITRE_ATT%26CK-FF0000?style=for-the-badge)
 
 pfSense deployed as the network gateway for the SOC home lab — controlling traffic between VMs, enforcing firewall rules, and generating logs that show real blocked connection attempts. Every finding here came from actual lab activity.
@@ -40,13 +39,12 @@ Configured LAN firewall rules in pfSense to control which hosts could communicat
 
 <img width="1596" height="850" alt="network checking" src="https://github.com/user-attachments/assets/dcfe36b1-97e3-44fc-8053-0e03b295569f" />
 
-
 <br>
 
 - Configured WAN and LAN interfaces with static IP addressing
 - Applied a block rule targeting 192.168.1.101 (Kali Linux attacker machine)
 - Verified the block by running ping from Kali — went from 0% packet loss to 100% packet loss after rule was applied
-- 📌 MITRE: `T1562.004` Disable or Modify System Firewall · `T1590` Gather Victim Network Information
+- 📌 MITRE: `T1562.004` Disable or Modify System Firewall
 
 ---
 
@@ -64,7 +62,7 @@ Reviewed pfSense firewall logs after applying the block rule to confirm the traf
 - Source IP 192.168.1.101 (Kali attacker) was attempting both ICMP pings to 8.8.8.8 and TCP connections to 192.168.56.103:1514
 - Port 1514 is the Wazuh agent communication port — this shows Kali attempting to reach the Wazuh manager directly
 - All attempts blocked by USER_RULE confirming the firewall rule was correctly enforced
-- 📌 MITRE: `T1046` Network Service Scanning · `T1590.005` IP Addresses
+- 📌 MITRE: `T1046` Network Service Scanning
 
 ---
 
